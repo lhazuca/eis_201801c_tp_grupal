@@ -7,7 +7,7 @@ import gradle.cucumber.Biscuit;
 import gradle.cucumber.Pacman;
 import org.junit.Assert;
 
-public class PacmanStepsdefs {
+public class PacmanEatsBuiscuitStepsdefs {
 
     Pacman pacman = new Pacman();
     @Given("^the pacman is created with (\\d+) points$")
