@@ -1,8 +1,11 @@
 package gradle.cucumber;
 
 public class Pacman {
-
     private Integer points;
+  
+    public Pacman(){
+        points = 0;
+    }
 
     public int getPoints() {
         return points;
@@ -13,9 +16,6 @@ public class Pacman {
     }
     public void eat(Biscuit biscuit) {
         points += biscuit.getPoints();
-    }
-    public Pacman(){
-        points = 0;
     }
 
     public void eat(Fruit fruit) {
