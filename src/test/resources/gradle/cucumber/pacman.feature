@@ -14,3 +14,16 @@ Feature: Pacman
     Examples:
       |pointsInitial| points | endPoints |
       |   10        |   3    |    13     |
+
+
+    Scenario Outline: pacman collides with a ghost and dies
+      Given the pacman with <pointsInitial> points and ghost unweakened
+      When  the pacman collides with ghost
+      Then  the pacman dies and his points become zero
+      Examples:
+        | pointsInitial |
+        |      0        |
+        |     10        |
+
+
+
