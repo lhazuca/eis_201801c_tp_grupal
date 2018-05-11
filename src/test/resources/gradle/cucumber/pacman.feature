@@ -1,10 +1,10 @@
 Feature: Pacman
 
   Scenario: Pacman eats a fruit
-    Given a new Pacman with zero points
-    Given a new fruit with one point
+    Given a new Pacman with <pacmanPoints> points
+    Given a new fruit with <fruitPoints> points
     When Pacman eats a fruit
-    Then Pacman has one point
+    Then Pacman has <finalPoints> points
 
   Scenario Outline: the pacman sees a biscuit
     Given the pacman is created with <pointsInitial> points

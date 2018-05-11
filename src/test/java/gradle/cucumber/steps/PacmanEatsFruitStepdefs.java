@@ -14,14 +14,15 @@ public class PacmanEatsFruitStepdefs {
     private Fruit fruit;
 
     @Given("^a new Pacman with (\\d+) points$")
-    public void newPacmanWithZeroPoints() throws Throwable{
+    public void newPacmanWithPoints(int arg) throws Throwable{
         pacman = new Pacman();
-        assertThat(pacman.getPoints()).isEqualTo(0);
+        pacman.setPoints(arg);
+        assertThat(pacman.getPoints()).isEqualTo(arg);
     }
 
     @Given("^a new fruit with (\\d+) point$")
-    public void newFruitWithOnePoint() throws Throwable{
-        fruit = new Fruit(1);
+    public void newFruitWithPoints(int arg) throws Throwable{
+        fruit = new Fruit(arg);
     }
 
     @When("^Pacman eats a fruit$")
@@ -30,8 +31,8 @@ public class PacmanEatsFruitStepdefs {
     }
 
     @Then("^Pacman has (\\d+) point$")
-    public void pacmanHasOnePoint() {
-        assertThat(pacman.getPoints()).isEqualTo(1);
+    public void pacmanHasPoints(int arg) {
+        assertThat(pacman.getPoints()).isEqualTo(arg);
     }
 
 }
