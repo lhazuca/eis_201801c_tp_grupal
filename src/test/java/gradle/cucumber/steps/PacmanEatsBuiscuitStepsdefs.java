@@ -15,8 +15,8 @@ public class PacmanEatsBuiscuitStepsdefs {
         pacman.setPoints(arg1);
     }
 
-    @When("^the pacman eats a biscuit what sum (\\d+) points$")
-    public void the_pacman_eats_a_biscuit_what_sum_points(int arg1) {
+    @When("^the pacman eats a biscuit that sum (\\d+) points$")
+    public void the_pacman_eats_a_biscuit_that_sum_points(int arg1) {
         Biscuit biscuit = new Biscuit(arg1);
         pacman.eat(biscuit);
     }
