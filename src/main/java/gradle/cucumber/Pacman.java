@@ -1,6 +1,7 @@
 package gradle.cucumber;
 
 public class Pacman {
+
     private Integer points;
   
     public Pacman(){
@@ -23,10 +24,11 @@ public class Pacman {
         points += biscuit.getPoints();
     }
 
-    public void eat(Fruit fruit) {
-        points += fruit.value;
+    public void eat(Food food) {
+        points += food.getPoints();
     }
 
+    //TODO: Change this method to collide
     public void eat(Ghost ghost) {
         if(!ghost.isWeakened()) {
             this.points = 0;

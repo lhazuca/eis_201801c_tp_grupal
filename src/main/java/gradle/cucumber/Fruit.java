@@ -1,11 +1,8 @@
 package gradle.cucumber;
 
-public class Fruit {
+public class Fruit extends Food{
 
-    Integer value;
-
-    public Fruit(Integer points){
-        value = points;
+    public Fruit(int points){
+        this.points = points;
     }
-
 }
