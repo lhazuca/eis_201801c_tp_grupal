@@ -8,18 +8,18 @@ import gradle.cucumber.Pacman;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class PacmanEatsFruit {
+public class PacmanEatsFruitStepdefs {
 
     private Pacman pacman;
     private Fruit fruit;
 
-    @Given("^a new Pacman with zero points$")
+    @Given("^a new Pacman with (\\d+) points$")
     public void newPacmanWithZeroPoints() throws Throwable{
         pacman = new Pacman();
         assertThat(pacman.getPoints()).isEqualTo(0);
     }
 
-    @Given("^a new fruit with one point$")
+    @Given("^a new fruit with (\\d+) point$")
     public void newFruitWithOnePoint() throws Throwable{
         fruit = new Fruit(1);
     }
@@ -29,7 +29,7 @@ public class PacmanEatsFruit {
         pacman.eat(fruit);
     }
 
-    @Then("^Pacman has one point$")
+    @Then("^Pacman has (\\d+) point$")
     public void pacmanHasOnePoint() {
         assertThat(pacman.getPoints()).isEqualTo(1);
     }
