@@ -6,7 +6,6 @@ import cucumber.api.java.en.When;
 import gradle.cucumber.Ghost;
 import gradle.cucumber.Pacman;
 import org.junit.Assert;
-import sun.security.util.PendingException;
 
 public class PacmanCollidesWithGhostStepsdefs {
 

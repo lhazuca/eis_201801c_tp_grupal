@@ -28,6 +28,8 @@ public class Pacman {
     }
 
     public void eat(Ghost ghost) {
-        this.points = 0;
+        if(!ghost.isWeakened()) {
+            this.points = 0;
+        }
     }
 }
