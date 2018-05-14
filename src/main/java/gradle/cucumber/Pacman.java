@@ -30,7 +30,10 @@ public class Pacman {
 
     //TODO: Change this method to collide
     public void eat(Ghost ghost) {
-        if(!ghost.isWeakened()) {
+        if(ghost.isWeakened()) {
+            ghost.body(false);
+        }
+        else{
             this.points = 0;
         }
     }

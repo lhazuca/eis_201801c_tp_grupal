@@ -29,5 +29,12 @@ Feature: Pacman
         |      0        |
         |     10        |
 
+  Scenario Outline: pacman collides with a ghost weaked
 
+    Given pacman with <pointsInitial> points and ghost weakened
+    When  pacman collides with ghost weakened
+    Then  pacman not dies and ghost loses the body
+    Examples:
+      | pointsInitial |
+      |     10        |
 
