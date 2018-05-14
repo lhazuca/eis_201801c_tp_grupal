@@ -30,4 +30,10 @@ Feature: Pacman
         |     10        |
 
 
-
+    Scenario Outline: pacman eats a pellet and all ghosts get weakened.
+      Given the pacman whit <initialPoints> points and unweakened ghosts
+      When the pacman eats a pellet
+      Then all ghosts get weakened
+      Examples:
+      |initialPoints|
+      |0            |

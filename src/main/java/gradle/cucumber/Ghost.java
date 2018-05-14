@@ -10,4 +10,8 @@ public class Ghost {
     public boolean isWeakened() {
         return weakened;
     }
+
+    public void weaken() {
+        this.weakened = true;
+    }
 }

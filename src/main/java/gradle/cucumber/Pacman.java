@@ -1,9 +1,13 @@
 package gradle.cucumber;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pacman {
 
     private Integer points;
-  
+    private List<Ghost> ghosts = new ArrayList<Ghost>();
+
     public Pacman(){
         points = 0;
     }
@@ -25,7 +29,7 @@ public class Pacman {
     }
 
     public void eat(Food food) {
-        points += food.getPoints();
+        food.eatenBy(this);
     }
 
     //TODO: Change this method to collide
@@ -33,5 +37,13 @@ public class Pacman {
         if(!ghost.isWeakened()) {
             this.points = 0;
         }
+    }
+
+    public void addGhosts(List<Ghost> ghostsList) {
+        this.ghosts = ghostsList;
+    }
+
+    public void weakenGhosts() {
+        this.ghosts.forEach(ghost -> ghost.weaken());
     }
 }
