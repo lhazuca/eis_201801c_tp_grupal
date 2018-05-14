@@ -20,17 +20,17 @@ Feature: Pacman
       |   10        |   3    |    13     |
 
 
-    Scenario Outline: pacman collides with a ghost and dies
-      Given the pacman with <pointsInitial> points and ghost unweakened
-      When  the pacman collides with ghost
-      Then  the pacman dies and his points become zero
-      Examples:
-        | pointsInitial |
-        |      0        |
-        |     10        |
+  Scenario Outline: pacman collides with a ghost and dies
+    Given the pacman with <pointsInitial> points and ghost unweakened
+    When  the pacman collides with ghost
+    Then  the pacman dies and his points become zero
+
+    Examples:
+      | pointsInitial |
+      |      0        |
+      |     10        |
 
   Scenario Outline: pacman collides with a ghost weaked
-
     Given pacman with <pointsInitial> points and ghost weakened
     When  pacman collides with ghost weakened
     Then  pacman not dies and ghost loses the body
@@ -38,3 +38,12 @@ Feature: Pacman
       | pointsInitial |
       |     10        |
 
+
+  Scenario Outline: pacman sees a pellet
+    Given the pacman with <pointsInitial> points and ghost unweakened with <ghostLife>
+    When pacman eats a pellet
+    Then the ghost gets weakened
+
+    Examples:
+      | pointsInitial | ghostLife |
+      |        0      |     10    |

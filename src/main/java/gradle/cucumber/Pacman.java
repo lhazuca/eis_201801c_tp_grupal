@@ -1,15 +1,23 @@
 package gradle.cucumber;
 
+import java.util.ArrayList;
+
 public class Pacman {
 
     private Integer points;
-  
-    public Pacman(){
+    private ArrayList<Ghost> recognizedGhosts;
+
+    public Pacman() {
         points = 0;
     }
 
     public Pacman(int pointsInitial) {
         this.points = pointsInitial;
+    }
+
+    public Pacman(int pointsInitial, ArrayList<Ghost> recognizedGhosts) {
+        this.points = pointsInitial;
+        this.recognizedGhosts = recognizedGhosts;
     }
 
     public int getPoints() {
@@ -28,13 +36,23 @@ public class Pacman {
         points += food.getPoints();
     }
 
+
     //TODO: Change this method to collide
     public void eat(Ghost ghost) {
         if(ghost.isWeakened()) {
             ghost.body(false);
         }
-        else{
+        else{}
+    }
+
+          
+    public void collide(Ghost ghost) {
+        if (!ghost.isWeakened()) {
             this.points = 0;
         }
+    }
+
+    public void eat(Pellet pellet) {
+        recognizedGhosts.forEach(ghost -> ghost.damageBy(pellet.getDamagePoints()));
     }
 }
