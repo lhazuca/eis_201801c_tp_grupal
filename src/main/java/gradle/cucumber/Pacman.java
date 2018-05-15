@@ -36,6 +36,16 @@ public class Pacman {
         points += food.getPoints();
     }
 
+
+    //TODO: Change this method to collide
+    public void eat(Ghost ghost) {
+        if(ghost.isWeakened()) {
+            ghost.body(false);
+        }
+        else{}
+    }
+
+          
     public void collide(Ghost ghost) {
         if (!ghost.isWeakened()) {
             this.points = 0;
