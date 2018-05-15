@@ -47,3 +47,12 @@ Feature: Pacman
     Examples:
       | pointsInitial | ghostLife |
       |        0      |     10    |
+
+  Scenario Outline: pacman collides with a bodyless pacman
+    Given pacman with <pointsInitial> points and a bodyless ghost
+    When pacman collides with bodyless ghost
+    Then pacman not dies
+
+    Examples:
+      | pointsInitial |
+      |      10       |

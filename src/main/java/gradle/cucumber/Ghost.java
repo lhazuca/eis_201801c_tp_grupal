@@ -1,25 +1,22 @@
 package gradle.cucumber;
 
+//TODO: Mejorar la forma de instanciar fantasmas.
 public class Ghost {
 
     private int lifePoints;
-    private boolean weakened;
-    private boolean body;
+    private boolean weakened = false;
+    private boolean body = true;
 
 
     public Ghost(boolean b) {
         weakened = b;
-        body = true;
-    }
-  
-    public Ghost() {
-        weakened = false;
     }
 
     public Ghost(int ghostLife) {
         lifePoints  = ghostLife;
-        weakened    = false;
     }
+
+    public Ghost() {}
 
     public boolean isWeakened() {
         return weakened;

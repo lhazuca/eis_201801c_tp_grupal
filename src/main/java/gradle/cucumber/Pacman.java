@@ -47,7 +47,7 @@ public class Pacman {
 
           
     public void collide(Ghost ghost) {
-        if (!ghost.isWeakened()) {
+        if (ghost.hasBody() && !ghost.isWeakened()) {
             this.points = 0;
         }
     }
