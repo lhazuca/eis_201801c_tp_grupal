@@ -15,19 +15,18 @@ public class PacmanCollidesWithGhostStepsdefs {
     @Given("^the pacman with (\\d+) points and ghost unweakened$")
     public void the_pacman_with_points_and_ghost_unweakened(int pointsinitial) {
         pacman = new Pacman(pointsinitial);
-        ghost = new Ghost(false);
+        ghost = new Ghost();
         Assert.assertEquals(pointsinitial,pacman.getPoints());
         Assert.assertFalse(ghost.isWeakened());
     }
 
     @When("^the pacman collides with ghost$")
     public void the_pacman_collides_with_ghost() {
-       pacman.eat(ghost);
+       pacman.collide(ghost);
     }
 
     @Then("^the pacman dies and his points become zero$")
     public void the_pacman_dies_and_his_points_become_zero() {
-        // Write code here that turns the phrase above into concrete actions
         Assert.assertEquals(0,pacman.getPoints());    }
 
 
