@@ -1,11 +1,12 @@
 package gradle.cucumber;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Pacman {
 
     private Integer points;
-    private ArrayList<Ghost> recognizedGhosts;
+    private List<Ghost> recognizedGhosts = new ArrayList<Ghost>();
 
     public Pacman() {
         points = 0;
@@ -33,7 +34,7 @@ public class Pacman {
     }
 
     public void eat(Food food) {
-        points += food.getPoints();
+        food.eatenBy(this);
     }
 
     public void collide(Ghost ghost) {
@@ -42,6 +43,15 @@ public class Pacman {
         }
     }
 
+
+    public void addGhosts(List<Ghost> ghostsList) {
+        this.recognizedGhosts = ghostsList;
+    }
+
+    public void weakenGhosts() {
+        this.recognizedGhosts.forEach(ghost -> ghost.weaken());
+    }
+  
     public void eat(Pellet pellet) {
         recognizedGhosts.forEach(ghost -> ghost.damageBy(pellet.getDamagePoints()));
     }

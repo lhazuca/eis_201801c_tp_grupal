@@ -7,4 +7,8 @@ public class Biscuit extends Food{
         this.points = points;
     }
 
+    @Override
+    public void eatenBy(Pacman pacman) {
+        pacman.setPoints(pacman.getPoints() + this.points);
+    }
 }

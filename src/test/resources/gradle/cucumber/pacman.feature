@@ -31,6 +31,16 @@ Feature: Pacman
       |     10        |
 
 
+
+    Scenario Outline: pacman eats a pellet and all ghosts get weakened.
+      Given the pacman whit <initialPoints> points and unweakened ghosts
+      When the pacman eats a pellet
+      Then all ghosts get weakened
+      Examples:
+      |initialPoints|
+      |0            |
+
+
   Scenario Outline: pacman sees a pellet
     Given the pacman with <pointsInitial> points and ghost unweakened with <ghostLife>
     When pacman eats a pellet
@@ -39,3 +49,4 @@ Feature: Pacman
     Examples:
       | pointsInitial | ghostLife |
       |        0      |     10    |
+

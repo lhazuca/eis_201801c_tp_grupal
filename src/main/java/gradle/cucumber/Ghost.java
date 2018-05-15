@@ -18,6 +18,11 @@ public class Ghost {
         return weakened;
     }
 
+
+    public void weaken() {
+        this.weakened = true;
+    }
+  
     public int getLifePoints() {
         return lifePoints;
     }
