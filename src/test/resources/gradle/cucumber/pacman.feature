@@ -56,3 +56,13 @@ Feature: Pacman
     Examples:
       | pointsInitial |
       |      10       |
+
+
+  Scenario Outline: pacman sees a passion fruit
+      Given the pacman with <pointsInitial> points and ghost with <ghostLife>
+      When pacman eats a passion fruit and then collides with a gost
+      Then the pacman has <pointsInitial> points and the ghost has <ghostLife> points
+
+      Examples:
+        | pointsInitial | ghostLife |
+        |      12       |    10     |
