@@ -37,6 +37,20 @@ El objetivo de este ejercicio es implementar parcialmente el modelo del juego [P
 5. Pacman choca contra un fantasma debilitado y no muero. Adicionalmente la digestión es el fantasma sin cuerpo.
 6. Pacman choca contra un fantasma sin cuerpo y no muere.
 
+7. Pacman como un maracuya y vuela evitando a los fantansmas. Este efecto se prolonga el resto de la partida.
+
+NOTA: El requerimiento (7) solo aplica para aquellos grupos de 5 integrantes.
+
+### Metodología
+
+Programación orientada a objetos + ATDD
+
+### Objetivos
+
+1. Crear un repositorio público con cualquier servicio de versionado de fuentes (Bitbucket, GitHub, etc.)
+2. El desarrollo se realiza utilizando la técnica ATDD
+3. A la hora de integrar los cambios de varios desarrolladores, utilizar el flujo de trabajo Feature Branch simulando un repositorio privado (branching model + fork).
+4. Cada cambio necesita ser integrado con la mayor frecuencia posiblie, utilizando para la verificación de este un servicio de CI (Continous Integration).
 
 [1]: https://travis-ci.org/
 [2]: https://en.wikipedia.org/wiki/Pac-Man
