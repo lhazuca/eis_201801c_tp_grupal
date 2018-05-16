@@ -7,4 +7,6 @@ public abstract class Food {
     public Integer getPoints() {
         return points;
     }
+
+    public abstract void effect(Pacman pacman);
 }

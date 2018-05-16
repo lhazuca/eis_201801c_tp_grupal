@@ -7,4 +7,8 @@ public class Biscuit extends Food{
         this.points = points;
     }
 
+    public void effect(Pacman pacman){
+        pacman.addPoints(this.points);
+    }
+
 }

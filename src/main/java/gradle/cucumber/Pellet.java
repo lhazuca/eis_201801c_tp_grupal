@@ -1,6 +1,6 @@
 package gradle.cucumber;
 
-public class Pellet {
+public class Pellet extends Food {
     private int damagePoints;
 
     public Pellet(int damagePoints) {
@@ -13,5 +13,9 @@ public class Pellet {
 
     public void setDamagePoints(int damagePoints) {
         this.damagePoints = damagePoints;
+    }
+
+    public void effect(Pacman pacman){
+        pacman.weakenGhosts(this);
     }
 }
