@@ -32,12 +32,8 @@ public class Pacman {
         this.points = points;
     }
 
-    public void eat(Biscuit biscuit) {
-        points += biscuit.getPoints();
-    }
-
     public void eat(Food food) {
-        points += food.getPoints();
+        food.effect(this);
     }
 
 
@@ -56,9 +52,14 @@ public class Pacman {
         }
     }
 
-    public void eat(Pellet pellet) {
-        recognizedGhosts.forEach(ghost -> ghost.damageBy(pellet.getDamagePoints()));
+    public void addPoints(int points){
+        this.points = this.points + points;
     }
 
-    public void eat(PassionFruit passionFruit){ this.floating = true; }
+    public void weakenGhosts(Pellet pellet){
+        this.recognizedGhosts.forEach(ghost -> ghost.damageBy(pellet.getDamagePoints()));
+    }
+
+    public void fly(){
+        this.floating = true; }
 }
